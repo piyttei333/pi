@@ -1,0 +1,1408 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>祠一覧</title>
+  <style>
+    /* ここに好きなスタイル（省略可） */
+    .shrine-card {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin: 8px;
+      border-radius: 5px;
+      background-color: #fff;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    }
+    .shrine-header {
+      font-weight: bold;
+      font-size: 16px;
+    }
+    .shrine-details {
+      display: none;
+      margin-top: 6px;
+    }
+    .shrine-card:hover {
+      background-color: #f0f8ff;
+    }
+  </style>
+</head>
+<body>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">ウコウジマの祠</div>
+  <div class="shrine-coords">座標: -1443, -1616, 0089</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>弓の基礎</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>木の矢、ボコブリンの角</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>ウコウジマの根（-1443, -1616, -0543）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">インイサの祠</div>
+  <div class="shrine-coords">座標: 0027, -1503, 0016</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>ウルトラハンド練習</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>木の板、扇風機</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>インイサの根（0027, -1503, -0560）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">カタキサの祠</div>
+  <div class="shrine-coords">座標: 1462, -1380, 0160</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>爆弾操作の実践</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>爆弾花、投げ槍</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>――</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">タマヨミの祠</div>
+  <div class="shrine-coords">座標: 3753, -2059, 0200</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>――</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>――</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>タマヨミの根（3753, -2059, -0443）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">ナチョヤハの祠</div>
+  <div class="shrine-coords">座標: -3641, -1485, 0200</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>――</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>――</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>――</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">オロチウの祠</div>
+  <div class="shrine-coords">座標: 0725, 2629, 0023</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>ラウルの祝福</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>宝箱（ルビー）</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>――</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">マヤチノウの祠</div>
+  <div class="shrine-coords">座標: -0706, -0866, 0005</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>角度の調整</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>石材、斧</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>マヤチノウの根（-0706, -0866, -0587）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">シシマの祠</div>
+  <div class="shrine-coords">座標: -2400, 0820, 0270</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>――</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>――</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>――</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">キョシウの祠</div>
+  <div class="shrine-coords">座標: 2354, 1706, 0171</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>――</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>――</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>――</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">ロナカチの祠</div>
+  <div class="shrine-coords">座標: -2983, 3102, 0510</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>――</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>――</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>ロナカチの根（-2983, 3102, -0550）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">イサヒシの祠</div>
+  <div class="shrine-coords">座標: -2186, -0898, 0101</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>風の通り道</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>風の翼、木の板</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>イサヒシの根（-2186, -0898, -0589）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">シハタノワの祠</div>
+  <div class="shrine-coords">座標: 0906, -0250, 0035</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>跳ね返す力</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>反射盾、ゴーレムの角</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>シハタノワの根（0906, -0250, -0543）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">ジョジュウウの祠</div>
+  <div class="shrine-coords">座標: -1510, 1345, 0099</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>ラウルの祝福</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>宝箱（ゾナニウムの剛弓）</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>ジョジュウウの根（-1510, 1345, -0576）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">ムオジームの祠</div>
+  <div class="shrine-coords">座標: -1442, 3668, 0307</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>――</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>ゾナウギア×複数</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>ムオジームの根（-1442, 3668, -0570）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">マヤコウの祠</div>
+  <div class="shrine-coords">座標: -0709, -1308, 0045</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>ゾナウギアで運ぶ</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>バッテリー、滑車、板</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>マヤコウの根（-0709, -1308, -0563）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">タダナウの祠</div>
+  <div class="shrine-coords">座標: 2068, 0905, 0120</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>――</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>――</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>――</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">ヤンサミミの祠</div>
+  <div class="shrine-coords">座標: 4654, 3712, 0102</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>――</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>――</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>ヤンサミミの根（4654, 3712, -0580）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">ジョジュニウの祠</div>
+  <div class="shrine-coords">座標: -1828, 1220, 0099</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>風で運ぶ</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>ファン、スイッチ板</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>ジョジュニウの根（-1828, 1220, -0572）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">キトワワの祠</div>
+  <div class="shrine-coords">座標: -1529, -2929, 0325</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>――</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>――</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>キトワワの根（-1529, -2929, -0573）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">リノツウの祠</div>
+  <div class="shrine-coords">座標: -1811, 0167, 0111</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>タイミングを合わせる</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>時限装置、丸板</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>リノツウの根（-1811, 0167, -0575）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">ジョジュオウの祠</div>
+  <div class="shrine-coords">座標: -1513, 2280, 0234</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>風で送る</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>扇風機、木の板、フック</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>ジョジュオウの根（-1513, 2280, -0583）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">ススヤイの祠</div>
+  <div class="shrine-coords">座標: 0348, -2014, 0018</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>ゾナウギアの仕組み</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>大きなギア、板、車輪、軸</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>ススヤイの根（0348, -2014, -0560）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">ナミカオズの祠</div>
+  <div class="shrine-coords">座標: 7013, -1214, 0068</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>ラウルの祝福</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>ゾーラの盾（宝箱）</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>ナミカオズの根（7013, -1214, -0582）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">マヤミウの祠</div>
+  <div class="shrine-coords">座標: 4681, -3087, 0052</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>球を運ぶ知恵</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>鉄の球、ボックス、スイッチ板</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>マヤミウの根（4681, -3087, -0593）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">シナカワカの祠</div>
+  <div class="shrine-coords">座標: -1880, -3481, 0386</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>くっつけて使え</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>接着剤、木の棒、板</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>シナカワカの根（-1880, -3481, -0570）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">マヤウメキの祠</div>
+  <div class="shrine-coords">座標: 4512, 2116, 0001</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>昇る力</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>トロッコ、弓矢、ゾナウバネ</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>マヤウメキの根（4512, 2116, -0581）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">キウヨヨウの祠</div>
+  <div class="shrine-coords">座標: -1107, 2087, 0105</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>――</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>――</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>――</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">ジョチウウの祠</div>
+  <div class="shrine-coords">座標: 2841, 3608, 0054</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>火をうまく使え</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>火炎放射器、木箱、松明</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>ジョチウウの根（2841, 3608, -0589）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">シオゴイニの祠</div>
+  <div class="shrine-coords">座標: -1608, -1211, 0082</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>つかまって動け</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>スライダー、フック</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>シオゴイニの根（-1608, -1211, -0571）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">マヤココの祠</div>
+  <div class="shrine-coords">座標: 3272, -1188, 0008</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>一発で仕留めろ</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>弓、爆弾花（使い捨て）</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>マヤココの根（3272, -1188, -0585）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">マカスラの祠</div>
+  <div class="shrine-coords">座標: 1700, -1051, 0166</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>起き上がるもの</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>妖精の力水（宝箱）</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>マカスラの根（1700, -1051, -0575）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">ツカロクの祠</div>
+  <div class="shrine-coords">座標: 0915, -0250, 0034</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>進むちから</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>ゾナニウムの強剣</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>ツカロクの根（0915, -0250, -0543）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">ジオシニオの祠</div>
+  <div class="shrine-coords">座標: -0240, -0370, 0027</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>知恵の輪</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>ゴーゴー薬（宝箱）</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>ジオシニオの根（-0240, -0370, -0540）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">モロンクの祠</div>
+  <div class="shrine-coords">座標: 1182, -0779, 0133</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>跳ね飛ばすもの</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>しのび薬（宝箱）</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>モロンクの根（1182, -0779, -0570）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">シナカワカの祠</div>
+  <div class="shrine-coords">座標: -1413, 0756, 0089</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>浮き上がるもの</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>オパール（宝箱）</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>シナカワカの根（-1413, 0756, -0570）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">オロムワカの祠</div>
+  <div class="shrine-coords">座標: -3079, 1617, 0243</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>打ち上げるもの</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>ルビー（宝箱）</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>オロムワカの根（-3079, 1617, -0572）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">タキイハバノの祠</div>
+  <div class="shrine-coords">座標: -1830, 1194, 0147</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>ラウルの祝福</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>大きなゾナウエネルギー</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>タキイハバノの根（-1830, 1194, -0575）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">マクルキサの祠</div>
+  <div class="shrine-coords">座標: -2847, 0629, 0233</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>戦いの教え・弓の極意</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>ゴーレムの強弓（宝箱）</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>マクルキサの根（-2847, 0629, -0570）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">ルナキタの祠</div>
+  <div class="shrine-coords">座標: 2530, 1170, 0178</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>運ぶかたち</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>ゴーレムの弓（宝箱）</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>ルナキタの根（2530, 1170, -0571）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">エショセの祠</div>
+  <div class="shrine-coords">座標: 1566, -1944, 0157</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>戦いの教え・盾の極意</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>ゾナニウムの堅盾（宝箱）</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>エショセの根（1566, -1944, -0572）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">ジョチオウの祠</div>
+  <div class="shrine-coords">座標: 2885, 0443, 0035</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>――</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>――</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>ジョチオウの根（2885, 0443, -0572）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">ジョチサウの祠</div>
+  <div class="shrine-coords">座標: 1744, 0017, 0025</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>深く 強く</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>ゴーレムの強弓</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>ジョチサウの根（1744, 0017, -0570）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">ジョチニウの祠</div>
+  <div class="shrine-coords">座標: 1782, 1631, 0311</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>流れに逆らって</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>ゾナニウムの硬盾</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>ジョチニウの根（1782, 1631, -0575）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">ジョチイヒガの祠</div>
+  <div class="shrine-coords">座標: 3809, 1218, 0090</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>一身の戦い・極意</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>ゾナニウムの剛弓</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>ジョチイヒガの根（3809, 1218, -0580）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">ジョチシウの祠</div>
+  <div class="shrine-coords">座標: 2958, 2758, 0524</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>ラウルの祝福</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>大きなゾナウエネルギー</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>ジョチシウの根（2958, 2758, -0582）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">ジョチイウの祠</div>
+  <div class="shrine-coords">座標: 2880, 3673, 0231</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>一身の戦い・極意</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>ゾナニウムの剛剣</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>ジョチイウの根（2880, 3673, -0580）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">ジョチウウの祠</div>
+  <div class="shrine-coords">座標: 2841, 3608, 0054</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>火をうまく使え</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>火炎放射器、木箱、松明</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>ジョチウウの根（2841, 3608, -0589）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">ジョチオウの祠</div>
+  <div class="shrine-coords">座標: 2885, 0443, 0035</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>――</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>――</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>ジョチオウの根（2885, 0443, -0572）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">ジョチニウの祠</div>
+  <div class="shrine-coords">座標: 1782, 1631, 0311</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>流れに逆らって</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>ゾナニウムの硬盾</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>ジョチニウの根（1782, 1631, -0575）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">ジョチイヒガの祠</div>
+  <div class="shrine-coords">座標: 3809, 1218, 0090</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>一身の戦い・極意</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>ゾナニウムの剛弓</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>ジョチイヒガの根（3809, 1218, -0580）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">マカスラの祠</div>
+  <div class="shrine-coords">座標: 1700, -1051, 0166</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>起き上がるもの</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>妖精の力水（宝箱）</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>マカスラの根（1700, -1051, -0575）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">ツカロクの祠</div>
+  <div class="shrine-coords">座標: 0915, -0250, 0034</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>進むちから</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>ゾナニウムの強剣</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>ツカロクの根（0915, -0250, -0543）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">モロンクの祠</div>
+  <div class="shrine-coords">座標: 1182, -0779, 0133</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>跳ね飛ばすもの</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>しのび薬（宝箱）</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>モロンクの根（1182, -0779, -0570）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">ジオシニオの祠</div>
+  <div class="shrine-coords">座標: -0240, -0370, 0027</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>知恵の輪</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>ゴーゴー薬（宝箱）</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>ジオシニオの根（-0240, -0370, -0540）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">エショセの祠</div>
+  <div class="shrine-coords">座標: 1566, -1944, 0157</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>戦いの教え・盾の極意</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>ゾナニウムの堅盾</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>エショセの根（1566, -1944, -0572）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">シナカワカの祠</div>
+  <div class="shrine-coords">座標: -1413, 0756, 0089</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>浮き上がるもの</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>オパール（宝箱）</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>シナカワカの根（-1413, 0756, -0570）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">タキイハバノの祠</div>
+  <div class="shrine-coords">座標: -1830, 1194, 0147</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>ラウルの祝福</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>大きなゾナウエネルギー</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>タキイハバノの根（-1830, 1194, -0575）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">ルナキタの祠</div>
+  <div class="shrine-coords">座標: 2530, 1170, 0178</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>運ぶかたち</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>ゴーレムの弓</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>ルナキタの根（2530, 1170, -0571）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">マクルキサの祠</div>
+  <div class="shrine-coords">座標: -2847, 0629, 0233</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>戦いの教え・弓の極意</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>ゴーレムの強弓</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>マクルキサの根（-2847, 0629, -0570）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">オロムワカの祠</div>
+  <div class="shrine-coords">座標: -3079, 1617, 0243</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>打ち上げるもの</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>ルビー（宝箱）</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>オロムワカの根（-3079, 1617, -0572）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">エンオマの祠</div>
+  <div class="shrine-coords">座標: -0180, -1541, 0021</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>ラウルの祝福</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>ゾナニウムの剛剣</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>エンオマの根（-0180, -1541, -0543）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">タジカツの祠</div>
+  <div class="shrine-coords">座標: 0345, -1010, 0016</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>釣り合うかたち</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>鉄板、石材、天秤ギミック</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>タジカツの根（0345, -1010, -0540）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">タダロクンの祠</div>
+  <div class="shrine-coords">座標: -1082, -2187, 0129</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>火と水</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>水の実、火炎の実</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>タダロクンの根（-1082, -2187, -0568）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">カミズナの祠</div>
+  <div class="shrine-coords">座標: -0177, -1557, 0023</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>一身の戦い・初等</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>木の棒、盾、弓</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>カミズナの根（-0177, -1557, -0543）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">キョクゴニの祠</div>
+  <div class="shrine-coords">座標: -0710, -1550, 0006</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>天地の円</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>回転ギア、鉄球</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>キョクゴニの根（-0710, -1550, -0540）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">リオゴコの祠</div>
+  <div class="shrine-coords">座標: -1440, -1616, 0089</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>力の伝達</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>歯車、棒、スイッチ</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>リオゴコの根（-1440, -1616, -0543）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">エンオマの祠</div>
+  <div class="shrine-coords">座標: -0180, -1541, 0021</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>ラウルの祝福</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>ゾナニウムの剛剣</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>エンオマの根（-0180, -1541, -0543）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">タジカツの祠</div>
+  <div class="shrine-coords">座標: 0345, -1010, 0016</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>釣り合うかたち</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>鉄板、石材、天秤ギミック</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>タジカツの根（0345, -1010, -0540）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">タダロクンの祠</div>
+  <div class="shrine-coords">座標: -1082, -2187, 0129</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>火と水</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>火炎の実、水の実</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>タダロクンの根（-1082, -2187, -0568）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">カミズナの祠</div>
+  <div class="shrine-coords">座標: -0177, -1557, 0023</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>一身の戦い・初等</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>木の棒、盾、弓</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>カミズナの根（-0177, -1557, -0543）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">キョクゴニの祠</div>
+  <div class="shrine-coords">座標: -0710, -1550, 0006</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>天地の円</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>回転ギア、鉄球</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>キョクゴニの根（-0710, -1550, -0540）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">リオゴコの祠</div>
+  <div class="shrine-coords">座標: -1440, -1616, 0089</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>力の伝達</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>歯車、棒、スイッチ</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>リオゴコの根（-1440, -1616, -0543）</div>
+  </div>
+</div>
+
+<!-- ここからは仮情報含む祠 -->
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">コルユの祠</div>
+  <div class="shrine-coords">座標: 1046, 2690, 0394</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>――</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>――</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>コルユの根（1046, 2690, -0582）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">セリタタの祠</div>
+  <div class="shrine-coords">座標: -0955, 0435, 0085</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>――</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>――</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>セリタタの根（-0955, 0435, -0571）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">イカタクの祠</div>
+  <div class="shrine-coords">座標: -3843, -1324, 0433</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>ラウルの祝福</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>ゾナニウムの弓</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>イカタクの根（-3843, -1324, -0567）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">サヒロワの祠</div>
+  <div class="shrine-coords">座標: 2319, -2378, 0018</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>――</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>――</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>――</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">ツツウメの祠</div>
+  <div class="shrine-coords">座標: -1423, -1349, 0068</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>杭の導き</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>杭、板、ゾナウギア</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>ツツウメの根（-1423, -1349, -0568）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">テンジテンの祠</div>
+  <div class="shrine-coords">座標: -0075, -1115, 0021</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>戦いの教え・投げの極意</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>火炎の実、バクダン花</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>テンジテンの根（-0075, -1115, -0540）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">ウサズマの祠</div>
+  <div class="shrine-coords">座標: -2140, -0878, 0093</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>ラウルの祝福</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>ゾナニウムの堅盾</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>ウサズマの根（-2140, -0878, -0570）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">ソナパノの祠</div>
+  <div class="shrine-coords">座標: -1921, -0357, 0228</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>欠けた通り道</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>板、フック、ゾナウギア</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>ソナパノの根（-1921, -0357, -0570）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">ジョジョニウの祠</div>
+  <div class="shrine-coords">座標: 1202, 0329, 0027</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>一身の戦い・回転</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>回転斧、盾、弓</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>ジョジョニウの根（1202, 0329, -0540）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">レンイゼの祠</div>
+  <div class="shrine-coords">座標: 0775, 0823, 0082</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>飛び立つかたち</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>扇風機、板、ゾナウギア</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>レンイゼの根（0775, 0823, -0540）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">オヤミオの祠</div>
+  <div class="shrine-coords">座標: 0332, 0470, 0029</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>戦いの教え・投げの極意</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>火炎の実、バクダン花</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>オヤミオの根（0332, 0470, -0540）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">セパパの祠</div>
+  <div class="shrine-coords">座標: 0222, 1085, 0028</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>帰り道</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>ゾナウギア、板、フック</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>セパパの根（0222, 1085, -0540）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">キョノニシウの祠</div>
+  <div class="shrine-coords">座標: 0205, 0451, 0021</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>戦いの教え</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>ゾナニウムの剣、盾</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>キョノニシウの根（0205, 0451, -0540）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">セルタボマチの祠</div>
+  <div class="shrine-coords">座標: -0179, 1170, 0280</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>支えるかたち</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>板、杭、ゾナウギア</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>セルタボマチの根（-0179, 1170, -0570）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">イショダグンの祠</div>
+  <div class="shrine-coords">座標: -0880, 0422, 0049</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>風を生み出すもの</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>オパール（宝箱）</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>イショダグンの根（-0880, 0422, -0540）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">エコチウの祠</div>
+  <div class="shrine-coords">座標: 1062, 1279, 0045</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>落下と上昇</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>ゾナニウムの盾（宝箱）</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>エコチウの根（1062, 1279, -0540）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">テンマテンの祠</div>
+  <div class="shrine-coords">座標: -0593, 1551, -0014</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>ラウルの祝福</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>ゾナニウムの剛弓（宝箱）</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>テンマテンの根（-0593, 1551, -0570）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">ププンケの祠</div>
+  <div class="shrine-coords">座標: 0615, 2213, 0163</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>ラウルの祝福</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>ゾナニウムの堅盾（宝箱）</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>ププンケの根（0615, 2213, -0570）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">セクンボマラの祠</div>
+  <div class="shrine-coords">座標: 0165, 2314, 0178</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>ラウルの祝福</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>大きなゾナウエネルギー</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>セクンボマラの根（0165, 2314, -0570）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">ニンジシの祠</div>
+  <div class="shrine-coords">座標: 0353, 1891, 0178</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>ラウルの祝福</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>ゾナニウムの剛剣（宝箱）</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>ニンジシの根（0353, 1891, -0570）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">ムサノキラの祠</div>
+  <div class="shrine-coords">座標: 0411, 2131, 0143</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>ブラブラと</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>鉄球、鎖、板</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>ムサノキラの根（0411, 2131, -0570）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">キウヨヨウの祠</div>
+  <div class="shrine-coords">座標: -1106, 2086, 0104</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>炎を遮るもの</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>鉄板、扇風機、盾</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>キウヨヨウの根（-1106, 2086, -0570）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">キカクンの祠</div>
+  <div class="shrine-coords">座標: -0395, 2736, 0287</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>闇を照らすもの</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>松明、火炎の実、ゾナニウムの弓</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>キカクンの根（-0395, 2736, -0570）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">ヘブラ地方の祠（仮）</div>
+  <div class="shrine-coords">座標: ―――</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>――</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>――</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>――</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">マヤオタキの祠</div>
+  <div class="shrine-coords">座標: -0819, 3537, 0234</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>ラウルの祝福</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>ダイヤモンド（宝箱）</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>マヤオタキの根（-0819, 3537, -0570）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">オショザンウの祠</div>
+  <div class="shrine-coords">座標: -1405, 3677, 0288</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>木槌の一撃</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>木槌、杭、板</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>オショザンウの根（-1405, 3677, -0570）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">シスラナの祠</div>
+  <div class="shrine-coords">座標: -2560, 3353, 0245</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>ラウルの祝福</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>ゾナニウムの堅盾</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>シスラナの根（-2560, 3353, -0570）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">ルタフウメの祠</div>
+  <div class="shrine-coords">座標: -2998, 3105, 0514</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>ラウルの祝福</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>ゾナニウムの剛弓</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>ルタフウメの根（-2998, 3105, -0570）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">エウトウメの祠</div>
+  <div class="shrine-coords">座標: -3506, 3570, 0387</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>一身の戦い・潜入</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>ゾナニウムの剛剣、盾、弓</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>エウトウメの根（-3506, 3570, -0570）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">オタカカの祠</div>
+  <div class="shrine-coords">座標: -4391, 3714, 0212</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>一身の戦い・計略</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>ゾナニウムの強弓、盾</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>オタカカの根（-4391, 3714, -0570）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">イカタクの祠</div>
+  <div class="shrine-coords">座標: -3950, 1138, 0112</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>ラウルの祝福</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>大容量バッテリー</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>イカタクの根（-3950, 1138, -0570）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">マヤヒシカの祠</div>
+  <div class="shrine-coords">座標: 2958, -3207, 0080</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>ラウルの祝福</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>魔法の大杖</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>マヤヒシカの根（2958, -3207, -0570）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">ウコウホの祠</div>
+  <div class="shrine-coords">座標: 0275, -0913, 1460</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>創造の力（ウルトラハンド習得）</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>木の板、丸太</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>ウコウホの根（0275, -0913, -0543）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">インイサの祠</div>
+  <div class="shrine-coords">座標: 0024, -1502, 1408</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>組み合わせる力（スクラビルド習得）</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>木の棒、石、弓</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>インイサの根（0024, -1502, -0560）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">グタンバチの祠</div>
+  <div class="shrine-coords">座標: 0709, -1381, 1584</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>昇り上がる力（トーレルーフ習得）</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>木の矢、弓</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>グタンバチの根（0709, -1381, -0560）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">ナチョヤハの祠</div>
+  <div class="shrine-coords">座標: 0388, -1660, 2299</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>戻す力（モドレコ習得）</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>木の矢 ×10（宝箱）</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>ナチョヤハの根（0388, -1660, 1740）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">イジョオの祠</div>
+  <div class="shrine-coords">座標: -3859, 2682, 0702</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>守るだけにあらず</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>ゾナニウムの盾</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>イジョオの根（-3859, 2682, -0570）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">カハタナウメの祠</div>
+  <div class="shrine-coords">座標: -3298, 3433, 1347</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>ラウルの祝福</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>ゾナニウムの剛弓</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>カハタナウメの根（-3298, 3433, -0570）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">マヤウメキサの祠</div>
+  <div class="shrine-coords">座標: -2944, 3050, 0896</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>跳ね上がるちから</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>ゾナウバネ、鉄球、板</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>マヤウメキサの根（-2944, 3050, -0570）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">テンベザイの祠</div>
+  <div class="shrine-coords">座標: -0968, 3535, 1011</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>落下速度</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>ゾナニウムの盾（宝箱）</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>テンベザイの根（-0968, 3535, -0570）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">マヤミイの祠</div>
+  <div class="shrine-coords">座標: 0341, 2814, 1821</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>ラウルの祝福</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>ゾナニウムの堅盾（宝箱）</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>マヤミイの根（0341, 2814, -0570）</div>
+  </div>
+</div>
+
+<div class="shrine-card" onclick="toggleDetails(this)">
+  <div class="shrine-header">モギサリの祠</div>
+  <div class="shrine-coords">座標: 4655, 3501, 1010</div>
+  <div class="shrine-details">
+    <div class="shrine-section"><strong>内容：</strong>飛び出す勇気</div>
+    <hr>
+    <div class="shrine-section"><strong>入手可能素材：</strong>ゾナウギア（扇風機、翼）</div>
+    <hr>
+    <div class="shrine-section"><strong>破魔の根：</strong>モギサリの根（4655, 3501, -0570）</div>
+  </div>
+</div>
+  <script>
+    function toggleDetails(card) {
+      const detail = card.querySelector('.shrine-details');
+      detail.style.display = (detail.style.display === 'block') ? 'none' : 'block';
+    }
+  </script>
+
+</body>
+</html>

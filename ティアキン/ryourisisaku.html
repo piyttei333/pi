@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>武器一覧</title>
+  <style>
+    /* スタイルはそのままでOK（省略） */
+    .weapon-card, .katateken-card, .weapons-card, .ryoute-card {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin: 8px;
+      border-radius: 5px;
+      background-color: #fff;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    }
+
+    .weapon-header, .katateken-header, .weapons-header, .ryoute-header {
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .weapon-details, .katateken-details, .weapons-details, .ryoute-details {
+      display: none;
+      margin-top: 6px;
+    }
+
+    .weapon-card:hover, .katateken-card:hover, .weapons-card:hover, .ryoute-card:hover {
+      background-color: #f0f8ff;
+    }
+
+   */
+    .iframe-wrapper {
+      height: 0;
+      overflow: hidden;
+      transition: height 0.4s ease;
+    }
+
+    .iframe-wrapper.expanded {
+      height: 400px; /* クリック時に400pxを確保 */
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    
+  </style>
+</head>
+<body>
+     
+      <div class="katateken-card" onclick="toggleSection(this, 'katateken-details', event)">
+        <div class="katateken-header"><h3>片手剣</h3></div>
+        <div class="katateken-details">
+          
+          <div class="weapon-card" onclick="toggleSection(this, 'weapon-details', event)">
+            <div class="weapon-header">マスターソード</div>
+            <div class="weapon-details">
+              <div><strong>種類：</strong>片手剣</div>
+              <div><strong>内容：</strong>説明文など</div>
+              <div><strong>耐久：</strong>100</div>
+              <div><strong>攻撃力：</strong>50</div>
+            </div>
+          </div>
+
+          <div class="weapon-card" onclick="toggleSection(this, 'weapon-details', event)">
+            <div class="weapon-header">木の枝</div>
+            <div class="weapon-details">
+              <div><strong>種類：</strong>片手剣</div>
+              <div><strong>内容：</strong>説明文など</div>
+              <div><strong>耐久：</strong>100</div>
+              <div><strong>攻撃力：</strong>50</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+      <div class="katateken-card" onclick="toggleSection(this, 'katateken-details', event)">
+        <div class="katateken-header"><h3>両手剣</h3></div>
+        <div class="katateken-details">
+          
+          <div class="weapon-card" onclick="toggleSection(this, 'weapon-details', event)">
+            <div class="weapon-header">マスターソード</div>
+            <div class="weapon-details">
+              <div><strong>種類：</strong>片手剣</div>
+              <div><strong>内容：</strong>説明文など</div>
+              <div><strong>耐久：</strong>100</div>
+              <div><strong>攻撃力：</strong>50</div>
+            </div>
+          </div>
+
+          <div class="weapon-card" onclick="toggleSection(this, 'weapon-details', event)">
+            <div class="weapon-header">木の枝</div>
+            <div class="weapon-details">
+              <div><strong>種類：</strong>片手剣</div>
+              <div><strong>内容：</strong>説明文など</div>
+              <div><strong>耐久：</strong>100</div>
+              <div><strong>攻撃力：</strong>50</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    function toggleSection(card, className, event) {
+      event.stopPropagation();
+      const detail = card.querySelector(`.${className}`);
+      if (detail) {
+        detail.style.display = (detail.style.display === 'block') ? 'none' : 'block';
+      }
+    }
+
+document.addEventListener("DOMContentLoaded", function () {
+  // 高さをトグルする関数
+  function toggleIframe(containerId) {
+    const container = document.getElementById(containerId);
+
+    if (container) {
+      if (container.classList.contains("expanded")) {
+        container.classList.remove("expanded");
+        container.classList.add("collapsed");
+      } else {
+        container.classList.remove("collapsed");
+        container.classList.add("expanded");
+      }
+    } else {
+      console.error(`ID '${containerId}' の要素が見つかりません`);
+    }
+  }
+
+  // グローバル関数として公開
+  window.toggleIframe = toggleIframe;
+});
+
+  </script>
+</body>
+</html>
